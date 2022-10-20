@@ -1,0 +1,25 @@
+
+<mat-card>
+  <mat-card-header>
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput placeholder="Inserir grupo">
+        <button mat-icon-button matSuffix (click)="Addgroup()" [attr.aria-label]="'Addgroup'" [attr.aria-pressed]="add">
+          <mat-icon>add</mat-icon>
+      </button>
+      </mat-form-field>
+    </form>
+</mat-card-header>
+<mat-card-content>
+  <input matInput placeholder="Name"[(ngModel)]="name">
+  <br>
+  <input matInput placeholder="Descrição"[(ngModel)]="description">
+   
+    <br>
+    <div class="row text-center" *ngFor="let group of group">
+      <p><b>{{group.description}}</b><p>
+    </div>
+</mat-card-content>
+</mat-card>
+
+
