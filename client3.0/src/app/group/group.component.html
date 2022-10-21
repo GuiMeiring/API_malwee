@@ -1,0 +1,34 @@
+
+<mat-card>
+   <mat-card-content *ngIf="htmladd =='true'" >
+      <mat-card-title>
+          <h1>Cadastrar</h1>
+      </mat-card-title>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput placeholder="Descrição" [(ngModel)]="description">
+      </mat-form-field>
+      <mat-card-actions>
+        <button  mat-raised-button color="primary" (click)="groupAdd()" >Cadastrar</button>
+      </mat-card-actions>
+      
+    
+  </mat-card-content>
+  <mat-card-content *ngIf="htmladd =='false'">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput placeholder="Inserir grupo" [(ngModel)]="search">
+        <button mat-icon-button matSuffix (click)="htmlAdd()" [attr.aria-label]="'Addgroup'" [attr.aria-pressed]="add">
+          <mat-icon>add</mat-icon>
+      </button>
+      </mat-form-field>
+    
+    <br>
+  <div class="row text-center" *ngFor="let group of group | filter : search ">
+    <p><b>{{group.description}}</b><p>
+  </div>
+
+   
+    
+</mat-card-content>
+</mat-card>
+
+
