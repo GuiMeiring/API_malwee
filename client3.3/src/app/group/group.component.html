@@ -1,0 +1,89 @@
+<mat-card>
+  <mat-card-content class="card" *ngIf="htmladd == 2" >
+    <mat-card-title>
+      <h1>Cadastrar</h1>
+    </mat-card-title>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput placeholder="Descrição" [(ngModel)]="description">
+    </mat-form-field>
+    <mat-card-actions>
+      <button  mat-raised-button color="primary" (click)="groupAdd()" >Cadastrar</button>
+      <button  mat-raised-button color="primary"  (click)="cancelar()">Cancelar</button>
+    </mat-card-actions>
+  </mat-card-content>
+    <!--------------------------------------------------------------------------------------------------->
+  <mat-card-content class="card" *ngIf="htmladd ==1 ">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <input matInput placeholder="Inserir grupo" [(ngModel)]="search">
+      <button mat-icon-button matSuffix (click)="openDialog()" [attr.aria-label]="'Addgroup'" [attr.aria-pressed]="add">
+        <mat-icon>add</mat-icon>
+      </button>
+      <button mat-icon-button matSuffix (click)="htmlEdit()" [attr.aria-label]="'Addgroup'" [attr.aria-pressed]="edit">
+        <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button matSuffix (click)="deleteGroup()" [attr.aria-label]="'Addgroup'" [attr.aria-pressed]="delete">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-form-field>
+  <!-------------------------------------------------------------------------------------------------->
+  <br>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Descrição</th>
+    </tr>
+    <tr  *ngFor="let group of group  | filter : search">
+        <td class="th">{{group.id}}</td>
+        <td class="th">{{group.description}}</td>
+        <!--<p><b>{{group.id}} - {{group.description}}</b></p>-->
+    </tr>
+  </table>
+  
+  <!--------------------------------------------------------------------------------------------------->
+  </mat-card-content>
+  <mat-card-content class="card" *ngIf="htmladd ==3">
+    <mat-card-title>
+      <h1>Editar</h1>
+    </mat-card-title>
+    <mat-form-field class="example-full-width" appearance="fill">
+       <input matInput placeholder="ID" type="number"  [(ngModel)]="id" (blur)="getGroup()">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <input matInput placeholder="Descrição"  [(ngModel)]="description">
+    </mat-form-field>
+    <br>
+    <h1 >Grupos:</h1>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Descrição</th>
+      </tr>
+      <tr  *ngFor="let group of group  | filter : search">
+          <td class="th">{{group.id}}</td>
+          <td class="th">{{group.description}}</td>
+          <!--<p><b>{{group.id}} - {{group.description}}</b></p>-->
+      </tr>
+    </table>
+    <mat-card-actions>
+      <button  mat-raised-button color="primary"  (click)="groupEdit()">Editar</button>
+      <button  mat-raised-button color="primary"  (click)="cancelar()">Cancelar</button>
+    </mat-card-actions>
+  </mat-card-content>
+  
+  <mat-card-content class="card" *ngIf="htmladd ==4">
+    <mat-card-title>
+      <h1>Deletar</h1>
+    </mat-card-title>
+    <mat-form-field class="example-full-width" appearance="fill">
+       <input matInput placeholder="ID" type="number" minlength="1" required [(ngModel)]="id">
+    </mat-form-field>
+    <br>
+    <mat-card-actions>
+      <button  mat-raised-button color="primary"  (click)="groupDelete()">Excluir</button>
+      <button  mat-raised-button color="primary"  (click)="cancelar()">Cancelar</button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>
+
+
