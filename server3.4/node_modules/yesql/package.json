@@ -1,0 +1,38 @@
+{
+  "name": "yesql",
+  "version": "5.0.0",
+  "description": "Read named SQL statements from .sql files. Also named parameters for prepared statements.",
+  "main": "yesql.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pihvi/yesql.git"
+  },
+  "keywords": [
+    "sql",
+    "named",
+    "parameter",
+    "prepared",
+    "statement",
+    "pg",
+    "postgres",
+    "node-pg",
+    "node-postgres",
+    "mysql",
+    "pokemon",
+    "hack",
+    "growth"
+  ],
+  "author": "pihvi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pihvi/yesql/issues"
+  },
+  "homepage": "https://github.com/pihvi/yesql#readme",
+  "devDependencies": {
+    "assert-diff": "3.0.2",
+    "mocha": "8.2.1"
+  }
+}
