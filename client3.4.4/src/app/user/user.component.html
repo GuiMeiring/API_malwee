@@ -1,0 +1,24 @@
+<mat-card>
+
+    <mat-card-content >
+      <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput placeholder="Inserir grupo" [(ngModel)]="search">
+        <button mat-icon-button matSuffix (click)="openPostModal()" [attr.aria-label]="'Addgroup'" [attr.aria-pressed]="edit">
+          <mat-icon>edit</mat-icon>
+      </button>
+    </mat-form-field>
+    <!-------------------------------------------------------------------------------------------------->
+    <br>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Descrição</th>
+      </tr>
+      <tr  *ngFor="let user of user | filter : search">
+          <td class="th">{{user.id}}</td>
+          <td class="th">{{user.description}}</td>
+          <!--<p><b>{{group.id}} - {{group.description}}</b></p>-->
+      </tr>
+     </table>
+    </mat-card-content>
+  </mat-card>

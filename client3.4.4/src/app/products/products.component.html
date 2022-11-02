@@ -1,0 +1,32 @@
+<mat-card>
+
+  <mat-card-content>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <input matInput placeholder="Inserir grupo" [(ngModel)]="search">
+      <button mat-icon-button matSuffix (click)="postModalProducts()" [attr.aria-label]="'Addgroup'" [attr.aria-pressed]="add">
+        <mat-icon>add</mat-icon>
+    </button>
+  </mat-form-field>
+  <!-------------------------------------------------------------------------------------------------->
+  <br>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Descrição</th>
+      <th>Preço</th>
+      <th>ID Grupo</th>
+      <th>ID Sub-grupo</th>
+      <th>ID Coleção</th>
+    </tr>
+    <tr  *ngFor="let products of products | filter : search">
+        <td class="th" (click)="modalEditar(products, products.id,products.description,products.salePrice,products.fkGroup,products.fkSubGroup,products.fkCollection )">{{products.id}}</td>
+        <td class="th" (click)="modalEditar(products, products.id,products.description,products.salePrice,products.fkGroup,products.fkSubGroup,products.fkCollection )">{{products.description}}</td>
+        <td class="th" (click)="modalEditar(products, products.id,products.description,products.salePrice,products.fkGroup,products.fkSubGroup,products.fkCollection )">R$ {{products.salePrice}}</td>
+        <td class="th" (click)="modalEditar(products, products.id,products.description,products.salePrice,products.fkGroup,products.fkSubGroup,products.fkCollection )">{{products.fkGroup}}</td>
+        <td class="th" (click)="modalEditar(products, products.id,products.description,products.salePrice,products.fkGroup,products.fkSubGroup,products.fkCollection )">{{products.fkSubGroup}}</td>
+        <td class="th" (click)="modalEditar(products, products.id,products.description,products.salePrice,products.fkGroup,products.fkSubGroup,products.fkCollection )">{{products.fkCollection}}</td>
+      </tr>
+
+   </table>
+  </mat-card-content>
+</mat-card>

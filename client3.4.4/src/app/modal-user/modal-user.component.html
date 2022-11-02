@@ -1,0 +1,22 @@
+<mat-tab-group>
+    <mat-tab-group>
+        <mat-tab label="Cadastrar">
+            <mat-card-content>
+              <mat-card-title>
+              </mat-card-title>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <input matInput placeholder="Nome" [(ngModel)]="name">
+              </mat-form-field>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <input matInput placeholder="CNPJ" [(ngModel)]="cnpj">
+              </mat-form-field>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <input matInput placeholder="Razão social" [(ngModel)]="razaoSocial">
+              </mat-form-field>
+              <mat-card-actions>
+                <button  mat-raised-button color="primary" (click)="groupAdd()" >Cadastrar</button>
+                <button  mat-raised-button color="primary" (click)="onNoClick()" >Cancelar</button>
+              </mat-card-actions>
+            </mat-card-content>
+        </mat-tab>
+</mat-tab-group>

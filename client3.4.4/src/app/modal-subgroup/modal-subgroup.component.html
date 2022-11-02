@@ -1,0 +1,70 @@
+<mat-tab-group>
+    
+  <mat-tab label="Dados">
+     <mat-card-content>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Descrição</th>
+        </tr>
+        <tr  *ngFor="let subGroup of subGroup">
+            <td class="th">{{subGroup.id}}</td>
+            <td class="th">{{subGroup.description}}</td>
+            <!--<p><b>{{group.id}} - {{group.description}}</b></p>-->
+        </tr>
+      </table>
+      <br>
+      <h1 >Grupo:</h1>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Descrição</th>
+        </tr>
+        <tr  *ngFor="let group of group">
+            <td class="th">{{group.id}}</td>
+            <td class="th">{{group.description}}</td>
+            <!--<p><b>{{group.id}} - {{group.description}}</b></p>-->
+        </tr>
+      </table>
+   <mat-card-actions>
+     <button  mat-raised-button color="primary"  (click)="onNoClick()">Cancelar</button>
+   </mat-card-actions>
+       
+      
+     </mat-card-content>
+ </mat-tab>
+ <mat-tab label="Editar">
+ <mat-card-content>
+   <mat-form-field class="example-full-width" appearance="fill">
+     <input matInput  placeholder="Descrição"  [(ngModel)]="description">
+   </mat-form-field>
+   <br>
+   <table>
+     <tr>
+       <th>ID</th>
+       <th>Descrição</th>
+     </tr>
+     <tr  *ngFor="let subGroup of subGroup">
+         <td class="th">{{subGroup.id}}</td>
+         <td class="th">{{subGroup.description}}</td>
+         <!--<p><b>{{group.id}} - {{group.description}}</b></p>-->
+     </tr>
+   </table>
+   <mat-card-actions>
+     <button  mat-raised-button color="primary"  (click)="subgroupEdit()">Editar</button>
+     <button  mat-raised-button color="primary"  (click)="onNoClick()">Cancelar</button>
+   </mat-card-actions>
+ </mat-card-content>
+ </mat-tab>
+ <mat-tab label="Deletar" >
+   <mat-card-content>
+     <br>
+        <h1>Tem certeza que deseja excluir esse Sub-grupo? </h1>
+     <br>
+     <mat-card-actions>
+       <button  mat-raised-button color="primary"  (click)="subgroupDelete()">Excluir</button>
+       <button  mat-raised-button color="primary"  (click)="onNoClick()">Cancelar</button>
+     </mat-card-actions>
+   </mat-card-content>
+ </mat-tab>
+</mat-tab-group>

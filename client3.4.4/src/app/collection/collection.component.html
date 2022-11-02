@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-content >
+      <mat-form-field class="example-full-width" appearance="fill">
+        <input matInput placeholder="Inserir Coleção" [(ngModel)]="search">
+        <button mat-icon-button matSuffix (click)="postCollectionModal()" [attr.aria-label]="'Collection'" [attr.aria-pressed]="add">
+          <mat-icon>add</mat-icon>
+      </button>
+    </mat-form-field>
+    <!-------------------------------------------------------------------------------------------------->
+    <br>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Descrição</th>
+      </tr>
+      <tr  *ngFor="let collection of collection  | filter : search">
+          <td (click)="editCollectionModal(collection, collection.id)" >{{collection.id}}</td>
+          <td (click)="editCollectionModal(collection, collection.id)">{{collection.description}}</td>
+          <!--<p><b>{{group.id}} - {{group.description}}</b></p>-->
+      </tr>
+     </table>
+    </mat-card-content>
+  </mat-card>

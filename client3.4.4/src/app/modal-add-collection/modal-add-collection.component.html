@@ -1,0 +1,12 @@
+<mat-card-content>
+  <mat-card-title>
+    <h1>Cadastrar Coleção</h1>
+  </mat-card-title>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <input matInput placeholder="Descrição" [(ngModel)]="description">
+  </mat-form-field>
+  <mat-card-actions>
+    <button  mat-raised-button color="primary" (click)="collectionAdd()" >Cadastrar</button>
+    <button  mat-raised-button color="primary" (click)="onNoClick()" >Cancelar</button>
+  </mat-card-actions>
+</mat-card-content>

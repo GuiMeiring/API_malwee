@@ -1,0 +1,48 @@
+<mat-card-content>
+  <mat-card-title>
+    <h1>Cadastrar Produto</h1>
+  </mat-card-title>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <input matInput placeholder="ID Grupo" [(ngModel)]="fkGroup" (blur)="getGroup()">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill" >
+    <input matInput placeholder="ID Sub-grupo" [(ngModel)]="fkSubgroup" (blur)="getSubgroup()">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <input matInput placeholder="ID Coleção" [(ngModel)]="fkCollection" (blur)="getCollection()">
+  </mat-form-field>
+  <br>
+  <table>
+    <tr>
+      <th></th>
+      <th>ID</th>
+      <th>Descrição</th>
+    </tr>
+    <tr  *ngFor="let group of group ">
+      <td>Grupo</td>
+      <td>{{group.id}}</td>
+      <td>{{group.description}}</td>
+  </tr>
+  <tr  *ngFor="let subGroup of subgroup ">
+    <td>Sub-grupo</td>
+    <td>{{subGroup.id}}</td>
+    <td>{{subGroup.description}}</td>
+</tr>
+    <tr  *ngFor="let collection of collection ">
+      <td>Coleção</td>
+        <td>{{collection.id}}</td>
+        <td>{{collection.description}}</td>
+    </tr>
+  </table>
+  <br>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <input matInput placeholder="Descrição" [(ngModel)]="description" >
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <input matInput placeholder="Preço" type="number" min="1"[(ngModel)]="salePrice">
+  </mat-form-field>
+  <mat-card-actions>
+    <button  mat-raised-button color="primary" (click)="addProducts()" >Cadastrar</button>
+    <button  mat-raised-button color="primary" (click)="onNoClick()" >Cancelar</button>
+  </mat-card-actions>
+</mat-card-content>
